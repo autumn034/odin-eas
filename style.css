@@ -4,26 +4,25 @@
 }
 
 .app {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
+    gap: 32px;
+    max-width: 800px;
+    padding: 16px;
 }
 
 .app__option {
-    padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-
-.app__option__icon {
-    font-size: 5rem;
+    flex: 0 1 30%;
 }
 
 .app__option__btn {
     border-style: none;
-    background-color: black;
+    background-color: rgb(16, 16, 16);
     color: white;
-    width: 192px;
+    width: 100%;
     height: 64px;
     font-family: monospace;
     font-size: 1rem;
@@ -31,16 +30,15 @@
 }
 
 .app__option__btn:hover {
-    border: 1px solid black;
+    border: 1px solid rgb(16, 16, 16);
     background-color: rgb(255, 255, 255);
-    color: black;
+    color: rgb(16, 16, 16);
 }
 
 .grid {
-    width: 640px; /*640 */
-    height: 640px;
-    display: inline-block;
-    line-height: 0px;
+    display: grid;
+    width: 500px;
+    height: 500px;
 }
 
 .grid__box {
@@ -52,4 +50,24 @@ body {
     background-color: #f5f5f5;
     text-align: center;
     font-family: monospace;
+    color: rgb(16, 16, 16);
+}
+
+@media (max-width: 650px) {
+    .app {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .app__option {
+        flex-direction: row;
+    }
+
+    .grid {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: auto;
+    }
+
 }
